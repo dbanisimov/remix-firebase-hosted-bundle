@@ -5,17 +5,19 @@
   "license": "",
   "scripts": {
     "build": "remix build",
+    "build:server": "esbuild --define:process.env.NODE_ENV='\"production\"' --minify --bundle --sourcemap --outdir=public/build/_assets-not-well-known --platform=node ./remix-function && node ./remix-function/version.js > public/build/_assets-not-well-known/VERSION",
     "dev": "remix dev",
     "postinstall": "remix setup node",
     "start": "remix-serve build"
   },
   "dependencies": {
+    "@remix-run/express": "^0.21.0",
     "@remix-run/react": "^0.21.0",
+    "@remix-run/serve": "^0.21.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.0.2",
-    "remix": "^0.21.0",
-    "@remix-run/serve": "^0.21.0"
+    "remix": "^0.21.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^0.21.0",
