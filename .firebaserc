@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "remix-firebase-hosted-bundle"
+  }
+}

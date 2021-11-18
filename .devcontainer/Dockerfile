@@ -14,3 +14,10 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
+
+# JDK for firebase emulators
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends default-jdk
+
+# firebase cli
+RUN su node -c "npm install -g firebase-tools"
